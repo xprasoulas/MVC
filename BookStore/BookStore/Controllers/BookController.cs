@@ -24,6 +24,7 @@ namespace BookStore.Controllers
             if(!string.IsNullOrWhiteSpace(searchString))
             {
                 //bring the books with the searchString
+                books = books.Where(b => b.Name.Contains(searchString));
             }
             return View(db.Books.ToList());
         }
