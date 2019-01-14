@@ -20,6 +20,16 @@ namespace BookStore.Controllers
             //We need a list of the books in database
             var books = from b in db.Books
                         select b;
+            //Create a list of Genre to fill the dropdown list
+            var GenreList = new List<string>();
+
+            //Create a alphabetically list of Genre
+            var GenreQuery = from g in db.Books
+                             orderby g.Genre
+                             select g.Genre;
+
+            GenreList = GenreQuery.Distinct().ToList();
+
 
             if (!string.IsNullOrWhiteSpace(bookGenre))
             {
