@@ -15,8 +15,12 @@ namespace BookStore.Controllers
         private BookStoreContext db = new BookStoreContext();
 
         // GET: Book
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
+            if(!string.IsNullOrWhiteSpace(searchString))
+            {
+                //bring the books with the searchString
+            }
             return View(db.Books.ToList());
         }
 
