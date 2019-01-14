@@ -26,7 +26,8 @@ namespace BookStore.Controllers
                 //bring the books with the searchString
                 books = books.Where(b => b.Name.Contains(searchString));
             }
-            return View(db.Books.ToList());
+            //both of db.Books.ToList() and books have the data but the first one goes to db again
+            return View(books);
         }
 
         // GET: Book/Details/5
