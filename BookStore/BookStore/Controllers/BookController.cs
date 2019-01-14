@@ -15,13 +15,18 @@ namespace BookStore.Controllers
         private BookStoreContext db = new BookStoreContext();
 
         // GET: Book
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string searchString, string bookGenre)
         {
             //We need a list of the books in database
             var books = from b in db.Books
                         select b;
 
-            if(!string.IsNullOrWhiteSpace(searchString))
+            if (!string.IsNullOrWhiteSpace(bookGenre))
+            {
+                books = books.Where(b => b.Genre == bookGenre);
+            }
+
+            if (!string.IsNullOrWhiteSpace(searchString))
             {
                 //bring the books with the searchString
                 books = books.Where(b => b.Name.Contains(searchString));
