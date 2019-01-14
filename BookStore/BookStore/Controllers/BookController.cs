@@ -30,6 +30,9 @@ namespace BookStore.Controllers
 
             GenreList = GenreQuery.Distinct().ToList();
 
+            //Create an empty list of books
+            ViewBag.BookGenre = new SelectList(GenreList);
+
 
             if (!string.IsNullOrWhiteSpace(bookGenre))
             {
