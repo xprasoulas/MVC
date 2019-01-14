@@ -17,6 +17,10 @@ namespace BookStore.Controllers
         // GET: Book
         public ActionResult Index(string searchString)
         {
+            //We need a list of the books in database
+            var books = from b in db.Books
+                        select b;
+
             if(!string.IsNullOrWhiteSpace(searchString))
             {
                 //bring the books with the searchString
