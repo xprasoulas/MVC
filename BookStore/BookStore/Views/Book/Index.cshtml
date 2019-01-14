@@ -12,6 +12,7 @@
     @using (Html.BeginForm())
     {
         <div>
+            Genre : @Html.DropDownList("bookGenre", "All") @*bookGenre is a MagicString*@
             Name: @Html.TextBox("SearchString")<br />
             <input type="submit" value="filter" />
         </div>
