@@ -2,7 +2,7 @@
 
 Welcome to the MVC 
 
-We will create bookStore with EntityFramework using a MVC Web Template(with individual User Authentication)
+We will create a bookStore with EntityFramework using a MVC Web Template(with individual User Authentication)
 
 We transfer data from bookController to IndexView using ViewBag
 
