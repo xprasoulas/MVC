@@ -51,7 +51,7 @@ namespace BookStore.Controllers
         public ActionResult BargainBook()
         {
             var book = GetBargainBook(); //call a method that return a 1st Cheap book from db
-            return View();
+            return View("_BargainBook", book);
         }
 
         private Book GetBargainBook()
