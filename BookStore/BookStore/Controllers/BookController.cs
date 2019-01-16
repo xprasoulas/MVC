@@ -54,7 +54,14 @@ namespace BookStore.Controllers
             return View();
         }
 
-        
+        private Book GetBargainBook()
+        {
+            return db.Books
+                    .OrderBy(b => b.Price)
+                    .First();
+                  
+             
+        }
         // GET: Book/Details/5
         public ActionResult Details(int? id)
         {
