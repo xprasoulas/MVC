@@ -48,6 +48,13 @@ namespace BookStore.Controllers
             return View(books);
         }
 
+        public ActionResult BargainBook()
+        {
+            var book = GetBargainBook(); //call a method that return a 1st Cheap book from db
+            return View();
+        }
+
+        
         // GET: Book/Details/5
         public ActionResult Details(int? id)
         {
