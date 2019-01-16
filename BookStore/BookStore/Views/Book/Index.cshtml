@@ -58,3 +58,14 @@
 }
 
 </table>
+
+<div id="bargainBook">
+    @Ajax.ActionLink("Click Here for Bargain Book",
+    "BargainBook",
+    new AjaxOptions
+    {
+        UpdateTargetId = "bargainBook",
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "Get"
+    })    
+</div>
